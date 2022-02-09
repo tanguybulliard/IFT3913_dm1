@@ -1,4 +1,11 @@
 package com.tanguybulliard;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Row;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 
 public class Excel {
@@ -6,7 +13,7 @@ public class Excel {
      * formate le fichiers classes.csv
      * @param path
      */
-    public static void classFile(String path) {
+    public static void classFile(String path) throws IOException {
         try (HSSFWorkbook workBook = new HSSFWorkbook();
              FileOutputStream fos = new FileOutputStream("classes.csv")) {
 
