@@ -5,17 +5,17 @@ import java.io.*;
 
 public class Analyser {
 
-    public static ArrayList<Integer> numberCommentClass = new ArrayList<>();
-    public static ArrayList<Integer> densityCommentClass = new ArrayList<>();
-    public static ArrayList<Integer> densityCommentPaquet= new ArrayList<>();
-    public static ArrayList<Integer> numberOfLineClass = new ArrayList<>();
-    public static int numberOfLinesPaquet;
-    public static int numberOfCommentPaquet;
-    public static int densityOfCommentPaquet;
-    public static ArrayList<Integer> weightedMethodsPerClass = new ArrayList<>();
-    public static int weightedClassPerPackage;
-    public static ArrayList<Integer> degreBonCommentClass = new ArrayList<>();
-    public static int degreBonCommentPaquet;
+    public static ArrayList<Double> numberCommentClass = new ArrayList<>();
+    public static ArrayList<Double> densityCommentClass = new ArrayList<>();
+    public static ArrayList<Double> densityCommentPaquet= new ArrayList<>();
+    public static ArrayList<Double> numberOfLineClass = new ArrayList<>();
+    public static double numberOfLinesPaquet;
+    public static double numberOfCommentPaquet;
+    public static double densityOfCommentPaquet;
+    public static ArrayList<Double> weightedMethodsPerClass = new ArrayList<>();
+    public static double weightedClassPerPackage;
+    public static ArrayList<Double> degreBonCommentClass = new ArrayList<>();
+    public static double degreBonCommentPaquet;
 
     /**
      *  classe_CLOC : nombre de lignes de code d’une classe qui contiennent des commentaires
@@ -29,7 +29,7 @@ public class Analyser {
             String myFolder = Java_file_finder.javaFileTovisit.get(j);
             String pathFileToVisit = yourPath + "/" + myFolder;
             String line = "";
-            int count = 0;
+            double count = 0;
             try {
                 BufferedReader br = new BufferedReader(new FileReader(pathFileToVisit));
                 while ((line = br.readLine()) != null) {
@@ -67,7 +67,7 @@ public class Analyser {
             String myFolder = Java_file_finder.javaFileTovisit.get(j);
             String pathFileToVisit = yourPath + "/" + myFolder;
             String line = "";
-            int count = 0;
+            double count = 0;
         try {
             BufferedReader br = new BufferedReader(new FileReader(pathFileToVisit));
             while ((line = br.readLine()) != null) {
@@ -113,12 +113,16 @@ public class Analyser {
     /**
      *classe_DC : densité de commentaires pour une classe : classe_DC = classe_CLOC / classe_LOC
      */
-    public static void classe_DC() {
+    public static boolean classe_DC() {
         for (int i = 0; i < numberCommentClass.size(); i++) {
             numberOfCommentPaquet += numberCommentClass.get(i);
-            int density =numberCommentClass.get(i)/numberOfLineClass.get(i);
+            double nombreClass=numberCommentClass.get(i);
+            double nombreLigne=numberOfLineClass.get(i);
+            double density= nombreClass / nombreLigne;
             densityCommentClass.add(density);
+
         }
+        return true;
     }
 
     /**
@@ -140,7 +144,7 @@ public class Analyser {
             String pathFileToVisit = yourPath + "/" + myFolder;
             String line = "";
             // Commence a 1 car le calcul de la complexité cyclomatique est calculé aves les noeuds prédicat +1
-            int count = 1;
+            double count = 1;
             try {
                 BufferedReader br = new BufferedReader(new FileReader(pathFileToVisit));
                 while ((line = br.readLine()) != null) {
@@ -187,7 +191,7 @@ public class Analyser {
      */
     public static void classe_BC(String yourPath){
         for (int i = 0; i < numberCommentClass.size(); i++) {
-            int count = densityCommentClass.get(i)/weightedMethodsPerClass.get(i);
+            double count = densityCommentClass.get(i)/weightedMethodsPerClass.get(i);
             degreBonCommentClass.add(count);
         }
     }

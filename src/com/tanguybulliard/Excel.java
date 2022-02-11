@@ -15,7 +15,7 @@ public class Excel {
      */
     public static void classFile(String path) throws IOException {
         try (HSSFWorkbook workBook = new HSSFWorkbook();
-             FileOutputStream fos = new FileOutputStream("/Users/Colin/Documents/testFeuilleExcel.csv")) {
+             FileOutputStream fos = new FileOutputStream("/Users/tanguybulliard/classe.csv")) {
 
             // création de la page excel
             HSSFSheet Sheet = workBook.createSheet("products");
