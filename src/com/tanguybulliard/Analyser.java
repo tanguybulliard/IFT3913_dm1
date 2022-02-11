@@ -130,9 +130,9 @@ public class Analyser {
     }
 
     /**
-     *WMC : somme pondérée des complexités cyclomatiques de McCabe de toutes les méthodes d'une classe
+     *wmc : somme pondérée des complexités cyclomatiques de McCabe de toutes les méthodes d'une classe
      */
-    public static boolean WMC(String yourPath){
+    public static boolean wmc(String yourPath){
         int j=0;
         while (Java_file_finder.javaFileTovisit.size()!= j) {
             // on boucle sur tous les fichiers se trouvant javaFileTovisit
@@ -175,9 +175,9 @@ public class Analyser {
     }
 
     /**
-     *WCP : somme des WMC de toutes les classes d’un paquet et les WCP de ses sous-paquets.
+     *wcp : somme des WMC de toutes les classes d’un paquet et les WCP de ses sous-paquets.
      */
-    public static void WCP(){
+    public static void wcp(){
         for(int i=0; i<numberOfLineClass.size();i++)
             weightedClassPerPackage+=weightedMethodsPerClass.get(i);
     }

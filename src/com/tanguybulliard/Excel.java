@@ -15,7 +15,7 @@ public class Excel {
      */
     public static void classFile(String path) throws IOException {
         try (HSSFWorkbook workBook = new HSSFWorkbook();
-             FileOutputStream fos = new FileOutputStream("classes.csv")) {
+             FileOutputStream fos = new FileOutputStream("/Users/Colin/Documents/testFeuilleExcel.csv")) {
 
             // création de la page excel
             HSSFSheet Sheet = workBook.createSheet("products");
@@ -27,6 +27,8 @@ public class Excel {
             header.createCell(2).setCellValue("classe_LOC");
             header.createCell(3).setCellValue("classe_CLOC");
             header.createCell(4).setCellValue("classe_DC");
+            header.createCell(5).setCellValue("wmc");
+            header.createCell(6).setCellValue("classe_BC");
 
 
 
@@ -43,6 +45,10 @@ public class Excel {
                 row.createCell(3).setCellValue(Analyser.numberCommentClass.get(i));
                 // colonne de Classe_DC
                 row.createCell(4).setCellValue(Analyser.densityCommentClass.get(i));
+                // colonne de wmc
+                row.createCell(5).setCellValue(Analyser.weightedMethodsPerClass.get(i));
+                // colonne de Classe_BC
+                row.createCell(6).setCellValue(Analyser.degreBonCommentClass.get(i));
             }
             // écrire nos résultats dans le fichier excels
             workBook.write(fos);
