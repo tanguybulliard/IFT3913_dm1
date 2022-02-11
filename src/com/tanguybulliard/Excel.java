@@ -14,9 +14,9 @@ public class Excel {
      * formate le fichiers classes.csv
      * @param path
      */
-    public static void classFile(String path) throws IOException {
+    public static void classFile(String path, String pathExcelFile) throws IOException {
         try (HSSFWorkbook workBook = new HSSFWorkbook();
-             FileOutputStream fos = new FileOutputStream("/Users/tanguybulliard/classes.csv")) {
+             FileOutputStream fos = new FileOutputStream(pathExcelFile)) {
 
             // création de la page excel
             HSSFSheet Sheet = workBook.createSheet("classes");
@@ -69,9 +69,9 @@ public class Excel {
      * formate le fichiers paquets.csv
      * @param path
      */
-    public static void paquetFile(String path) {
+    public static void paquetFile(String path, String pathExcelPaquet) {
         try (HSSFWorkbook workBook = new HSSFWorkbook();
-             FileOutputStream fos = new FileOutputStream("/Users/tanguybulliard/paquets.csv")) {
+             FileOutputStream fos = new FileOutputStream(pathExcelPaquet)) {
 
             // création de la page excel
             HSSFSheet Sheet = workBook.createSheet("paquets");

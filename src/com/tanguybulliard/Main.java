@@ -9,7 +9,9 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) throws IOException {
-        String path="/Users/tanguybulliard/Documents/GitHub/Ift3913_Tp1/src/com/tanguybulliard/";//Le chemin à analyser
+        String path="";//Le chemin absolu à analyser
+        String pathExcelClass="";// chemin absolu vers le fichier excel
+        String pathExcelPaquet="";// chemin absolu vers le fichier excel
 
         //algorithme qui récolte tous les fichiers se trouvant dans le chemin donner
         Java_file_finder.java_finder(path);
@@ -27,7 +29,7 @@ public class Main {
         Analyser.paquet_BC();
         
         //partie 3
-        Excel.classFile(path);
-        Excel.paquetFile(path);
+        Excel.classFile(path,pathExcelClass);
+        Excel.paquetFile(path,pathExcelPaquet);
     }
 }
