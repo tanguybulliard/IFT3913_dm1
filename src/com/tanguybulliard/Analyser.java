@@ -9,13 +9,13 @@ public class Analyser {
     public static ArrayList<Integer> densityCommentClass = new ArrayList<>();
     public static ArrayList<Integer> densityCommentPaquet= new ArrayList<>();
     public static ArrayList<Integer> numberOfLineClass = new ArrayList<>();
-    public static Integer numberOfLinesPaquet;
-    public static Integer numberOfCommentPaquet;
-    public static Integer densityOfCommentPaquet;
+    public static int numberOfLinesPaquet;
+    public static int numberOfCommentPaquet;
+    public static int densityOfCommentPaquet;
     public static ArrayList<Integer> weightedMethodsPerClass = new ArrayList<>();
-    public static Integer weightedClassPerPackage;
+    public static int weightedClassPerPackage;
     public static ArrayList<Integer> degreBonCommentClass = new ArrayList<>();
-    public static Integer degreBonCommentPaquet;
+    public static int degreBonCommentPaquet;
 
     /**
      *  classe_CLOC : nombre de lignes de code d’une classe qui contiennent des commentaires
@@ -49,7 +49,7 @@ public class Analyser {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            System.out.println("count=" + count);
+
             numberCommentClass.add(count);
             j++;
         }
@@ -85,7 +85,7 @@ public class Analyser {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("count=" + count);
+
         //le nombree de ligne de code est la différence entre les lignes contant des commentaires et des lignes pas vides
         count=count-numberCommentClass.get(j);
         numberOfLineClass.add(count);
@@ -166,7 +166,7 @@ public class Analyser {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            System.out.println("count=" + count);
+
             weightedMethodsPerClass.add(count);
             j++;
         }
