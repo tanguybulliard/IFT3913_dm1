@@ -21,7 +21,10 @@ public class Main {
         Analyser.classe_DC();
         Analyser.paquet_DC();
         //partie 2
-        
+        Analyser.WMC(path);
+        Analyser.WCP();
+        Analyser.classe_BC(path);
+        Analyser.paquet_BC();
         
         //partie 3
         Excel.classFile(path);
