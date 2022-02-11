@@ -1,0 +1,11 @@
+Voici les 3 paquets les moins bien commentés:
+-
+-
+-
+
+Voici les 3 classes les moins bien commentés:
+-
+-
+-
+
+Voici les amélioration et les solution a ce problème
