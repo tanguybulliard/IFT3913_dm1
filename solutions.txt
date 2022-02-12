@@ -9,3 +9,12 @@ Voici les 3 classes les moins bien commentés:
 -
 
 Voici les amélioration et les solution a ce problème
+
+
+La partie 4 est manquante ne la cherchez pas! 
+
+Nous avons réalisé tard dans le projet que notre code manquait un feature assez important, 
+Il nous manque la gestion de plusieurs packages. Notre code fonctionne bien pour un package isolé et faire tous les calculs nécessaire sur celui ci et ces classes.
+Par contre lorsque dans la partie 4 on demande de trouver plusieurs packages qui sont dans des dossiers de dossiers notre programme retourne une liste de fichier vide.
+
+Ceci sera fix pour la prochaine partie du projet le tp2 
