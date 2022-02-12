@@ -10,8 +10,8 @@ public class Main {
      */
     public static void main(String[] args) throws IOException {
         String path="";//Le chemin absolu à analyser
-        String pathExcelClass="";// chemin absolu vers le fichier excel
-        String pathExcelPaquet="";// chemin absolu vers le fichier excel
+        String pathExcelClass="";// chemin absolu vers le fichier excel 1
+        String pathExcelPaquet="";// chemin absolu vers le fichier excel 2
 
         //algorithme qui récolte tous les fichiers se trouvant dans le chemin donner
         Java_file_finder.java_finder(path);
